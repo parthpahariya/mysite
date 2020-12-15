@@ -1,0 +1,23 @@
+<html>
+<body>
+<a href='/oyerickshaw'><button type="button">Back</button></a>
+<table>
+    <thead>
+    <tr>
+        <th>Driver Id</th>
+        <th>X coordinate</th>
+        <th>Y coordinate</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in msg%}
+    <tr>
+        <td>{{item.driver_id}}</td>
+        <td>{{item.x_coor}}</td>
+        <td>{{item.y_coor}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

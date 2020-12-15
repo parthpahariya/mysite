@@ -40,9 +40,10 @@ def getDriversWithinDistance(request):
     else:
         return render(request, 'oyerickshaw/drivers.html')
 
-# def getLocationByDriverId(request, driverId):
-#
-#     return HttpResponse("You're looking at question %s, %s." % longitude % latidue)
+def getDrivers(request):
+    drivers = Driver.getAll()
+    context={"msg":drivers}
+    return render(request,'oyerickshaw/driverlist.html',context)
 #
 # def results(request, userId, xCoordinate, yCoordinate):
 #     # fetch drivers ids

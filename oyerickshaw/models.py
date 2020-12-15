@@ -7,7 +7,7 @@ class Driver(models.Model):
     y_coor = models.IntegerField()
 
     def updateLocation(driverId, xCoor, yCoor):
-        Driver.objects.save(driver_id=driver_id, x_coor= xCoor, y_coor = yCoor)
+        Driver(driver_id=driverId, x_coor= xCoor, y_coor = yCoor).save()
 
     def driverWithinRadius(radius, xCoor, yCoor):
         return Driver.objects.filter(
