@@ -11,6 +11,10 @@ python3 manage.py runserver
 python3 manage.py startapp oyerickshaw
 
 #create model
-python3 manage.py makemigrations polls
-python3 manage.py sqlmigrate polls 0001
+python3 manage.py makemigrations oyerickshaw
+python3 manage.py sqlmigrate oyerickshaw 0001
 python3 manage.py migrate
+
+
+#create superuser after creating model
+python3 manage.py createsuperuser
