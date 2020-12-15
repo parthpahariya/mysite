@@ -1,5 +1,6 @@
 # mysite
 #python version = 3.7
+#pip install django
 
 #create project
 django-admin startproject mysite
