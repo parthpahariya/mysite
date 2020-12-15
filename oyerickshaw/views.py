@@ -16,12 +16,13 @@ def getDriversWithinDistance(request):
     if request.method == 'POST':
         xCoordinate = int(request.POST.get('x_value'))
         yCoordinate = int(request.POST.get('y_value'))
+        radius = int(request.POST.get('radius'))
 
-        drivers = Driver.driverWithinRadius(200, xCoordinate, yCoordinate)
+        drivers = Driver.driverWithinRadius(radius, xCoordinate, yCoordinate)
         arr = []
         for div in drivers:
             dis = div.x_coor * div.x_coor + div.y_coor * div.y_coor
-            if dis <= 40000:
+            if dis <= radius * radius:
                 arr.append(div)
         context={"msg":arr}
         return render(request,'oyerickshaw/index.html',context)
