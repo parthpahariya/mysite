@@ -25,9 +25,9 @@ def getDriversWithinDistance(request):
             if dis <= radius * radius:
                 arr.append(div)
         context={"msg":arr}
-        return render(request,'oyerickshaw/index.html',context)
+        return render(request,'oyerickshaw/drivers.html',context)
     else:
-        return render(request, 'oyerickshaw/index.html')
+        return render(request, 'oyerickshaw/drivers.html')
 
 def getLocationByDriverId(request, driverId):
 
