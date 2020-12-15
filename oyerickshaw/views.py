@@ -7,15 +7,15 @@ from .models import Driver
 # Create your views here.
 
 def index(request):
-    return render(request, 'polls/index.html')
+    return render(request, 'oyerickshaw/index.html')
 
 def updateDrivesCoordinates(request, driverId, xCoordinate,  yCoordinate):
     return HttpResponse("You're looking at question %s, %s." % longitude % latidue)
 
 def getDriversWithinDistance(request):
     if request.method == 'POST':
-        xCoordinate = request.POST.get('x_value')
-        yCoordinate = request.POST.get('y_value')
+        xCoordinate = int(request.POST.get('x_value'))
+        yCoordinate = int(request.POST.get('y_value'))
 
         drivers = Driver.driverWithinRadius(200, xCoordinate, yCoordinate)
         arr = []
@@ -23,9 +23,10 @@ def getDriversWithinDistance(request):
             dis = div.x_coor * div.x_coor + div.y_coor * div.y_coor
             if dis <= 40000:
                 arr.append(div)
-        return HttpResponse(arr)
+        context={"msg":arr}
+        return render(request,'oyerickshaw/index.html',context)
     else:
-        return render(request, 'polls/index.html')
+        return render(request, 'oyerickshaw/index.html')
 
 def getLocationByDriverId(request, driverId):
 

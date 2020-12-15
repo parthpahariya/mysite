@@ -12,7 +12,6 @@ class Driver(models.Model):
             x_coor__lt = xCoor + radius).filter(
             y_coor__gte = yCoor - radius).filter(
             y_coor__lte = yCoor + radius)
-        # return Driver.objects.filter(driver_id='asas')[0].x_coor
 
     def getAll():
         return Driver.objects.all()
