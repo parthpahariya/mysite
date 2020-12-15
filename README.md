@@ -19,3 +19,6 @@ python3 manage.py migrate
 
 #create superuser after creating model
 python3 manage.py createsuperuser
+
+#oyerickshaw
+http://127.0.0.1:8000/oyerickshaw/
