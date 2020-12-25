@@ -42,7 +42,7 @@ def getDriversWithinDistance(request):
             return render(request,'oyerickshaw/drivers.html',context)
         except ValueError:
             context = {"errorMsg": "put all value as int"}
-            return render(request, 'oyerickshaw/updatelocation.html', context)
+            return render(request, 'oyerickshaw/drivers.html', context)
     else:
         return render(request, 'oyerickshaw/drivers.html')
 
